@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #09090b;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -12,15 +12,28 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), var(--font-mono), Arial, Helvetica, sans-serif;
+}
+
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.bg-contour-rings {
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 14%, rgba(34, 197, 94, 0.04) 15.5%, transparent 17%),
+    radial-gradient(circle at 50% 50%, transparent 28%, rgba(34, 197, 94, 0.03) 29.5%, transparent 31%),
+    radial-gradient(circle at 50% 50%, transparent 42%, rgba(34, 197, 94, 0.025) 43.5%, transparent 45%),
+    radial-gradient(circle at 50% 50%, transparent 56%, rgba(34, 197, 94, 0.02) 57.5%, transparent 59%),
+    radial-gradient(circle at 50% 50%, transparent 70%, rgba(34, 211, 238, 0.015) 71.5%, transparent 73%);
+}
+
+.bg-glow {
+  background: radial-gradient(ellipse at 50% 40%, rgba(34, 197, 94, 0.08) 0%, rgba(34, 211, 238, 0.04) 30%, transparent 70%);
 }
