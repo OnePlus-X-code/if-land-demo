@@ -18,7 +18,7 @@ export default function Home() {
 
         <div className="flex flex-col gap-4 sm:flex-row">
           <Link
-            href="https://www.baidu.com"
+            href="https://ncnewq4y9q21.feishu.cn/share/base/form/shrcnaIKkKECG9FuqfUmA3hxz7c"
             className="inline-flex h-12 items-center justify-center rounded-lg bg-green-500 px-8 text-base font-semibold text-zinc-900 shadow-[0_0_24px_rgba(34,197,94,0.45)] transition-all duration-300 hover:bg-green-400 hover:shadow-[0_0_36px_rgba(34,197,94,0.65)] hover:scale-105 active:scale-100"
           >
             立即报名
