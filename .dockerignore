@@ -1,0 +1,44 @@
+# 依赖
+node_modules
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# 构建产物（由 Docker 内部重新构建）
+.next
+out
+build
+
+# IDE 与编辑器
+.vscode
+.idea
+*.swp
+*.swo
+
+# 操作系统杂项
+.DS_Store
+Thumbs.db
+
+# 环境变量文件（敏感信息不应进入镜像）
+.env
+.env.local
+.env.*.local
+
+# 测试
+coverage
+.nyc_output
+
+# 文档
+README.md
+AGENTS.md
+CLAUDE.md
+
+# Docker 自身
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# IGA Pages
+.iga
