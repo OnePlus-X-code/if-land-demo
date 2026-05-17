@@ -27,6 +27,18 @@ const modules = [
     title: "IF.Land Hackathon",
     description:
       "36 小时把想法变成 Demo，你的疯狂点子值得落地的机会。",
+    actions: [
+      {
+        label: "立即报名",
+        href: "https://ncnewq4y9q21.feishu.cn/share/base/form/shrcnaIKkKECG9FuqfUmA3hxz7c",
+        primary: true,
+      },
+      {
+        label: "报名结果查询",
+        href: "https://ncnewq4y9q21.feishu.cn/share/base/query/shrcnBAngQyKhjQJnXk5eVcyIag",
+        primary: false,
+      },
+    ],
   },
   {
     image: "/images/ifdemoday.jpg",
@@ -53,21 +65,6 @@ export default function Home() {
           <p className="max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl">
             在这里，我们打破技术壁垒。作品与行动力远比背景更重要，每个人都有机会成为改变的发生器。
           </p>
-
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="https://ncnewq4y9q21.feishu.cn/share/base/form/shrcnaIKkKECG9FuqfUmA3hxz7c"
-              className="inline-flex h-12 items-center justify-center rounded-lg bg-green-500 px-8 text-base font-semibold text-zinc-900 shadow-[0_0_24px_rgba(34,197,94,0.45)] transition-all duration-300 hover:bg-green-400 hover:shadow-[0_0_36px_rgba(34,197,94,0.65)] hover:scale-105 active:scale-100"
-            >
-              立即报名
-            </Link>
-            <a
-              href="#modules"
-              className="inline-flex h-12 items-center justify-center rounded-lg border border-zinc-500/50 px-8 text-base font-semibold text-zinc-300 transition-all duration-300 hover:border-cyan-400/60 hover:text-cyan-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] hover:scale-105 active:scale-100"
-            >
-              探索矩阵
-            </a>
-          </div>
 
           <a
             href="#modules"
@@ -145,6 +142,30 @@ export default function Home() {
                         </li>
                       ))}
                     </ul>
+                  )}
+
+                  {"actions" in mod && mod.actions && (
+                    <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                      {mod.actions.map((action) =>
+                        action.primary ? (
+                          <Link
+                            key={action.label}
+                            href={action.href}
+                            className="inline-flex h-11 items-center justify-center rounded-lg bg-green-500 px-6 text-sm font-semibold text-zinc-900 shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 hover:bg-green-400 hover:shadow-[0_0_32px_rgba(34,197,94,0.65)] hover:scale-105 active:scale-100"
+                          >
+                            {action.label}
+                          </Link>
+                        ) : (
+                          <Link
+                            key={action.label}
+                            href={action.href}
+                            className="inline-flex h-11 items-center justify-center rounded-lg border border-zinc-500/50 px-6 text-sm font-semibold text-zinc-300 transition-all duration-300 hover:border-cyan-400/60 hover:text-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.35)] hover:scale-105 active:scale-100"
+                          >
+                            {action.label}
+                          </Link>
+                        )
+                      )}
+                    </div>
                   )}
                 </div>
               </article>
